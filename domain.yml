@@ -1,0 +1,87 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- search_movies
+- inform_no_of_tickets
+- inform_theater_name
+- inform_planned_date
+- inform_movie_name
+- inform_language
+- inform_planned_time
+- inform
+entities:
+- language
+- movie_name
+- planned_date
+- theater_name
+- planned_time
+- no_of_tickets
+slots:
+  language:
+    type: text
+  movie_name:
+    type: text
+  planned_date:
+    type: text
+  theater_name:
+    type: text
+  planned_time:
+    type: text
+  no_of_tickets:
+    type: text
+  status:
+    type: unfeaturized
+
+responses:
+  utter_greet:
+  - text: Hey! Iam Bot. I can assist you in booking movie tickets. Please enter the language of movie you wanted to go for?
+  utter_ask_language:
+  - text: Which language movies you wanted to go for?
+  utter_ask_planned_date:
+  - text: what is the planned date
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_movie_name:
+  - text: I understand you like to go for {language} movies. Please enter the Movie
+      Name.
+  utter_ask_date:
+  - text: Please enter the date
+  utter_ask_theater_name:
+  - text: Please enter the theater name.
+  utter_ask_planned_time:
+  - text: Please enter the time.
+  utter_ask_no_of_tickets:
+  - text: How many number of tickets you want to book?
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- find_language_types
+- find_movie_names
+- utter_ask_date
+- utter_ask_theater_name
+- utter_ask_time
+- utter_ask_movie_name
+- utter_ask_no_of_tickets
+forms:
+- ticket_booking_form
