@@ -16,3 +16,8 @@ rasa shell
 rasa interactive
 # To test the bot with Rasa UI
 rasa x
+# To connect with any external channels Url should be public url instead of localhost
+ngrok http 5005 //As Rasa server is running on http://localhost:5005
+# To run the model in other channels
+rasa run -m models --enable-api --cors "*" --debug
+
